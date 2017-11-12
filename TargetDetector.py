@@ -3,7 +3,7 @@ import cv2
 import math
 
 Video_capture = cv2.VideoCapture(1)
-horizCenter = 320 #if we used last year’s camera
+horizCenter = 320
 vertiCenter = 240
 targetWidth = 2
 targetHeight = 6
@@ -125,8 +125,8 @@ while(True):
 
         hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-        THRESHOLD_MIN = np.array([53, 5, 228],np.uint8)
-        THRESHOLD_MAX = np.array([58, 255, 238],np.uint8)
+        THRESHOLD_MIN = np.array([100, 0, 0],np.uint8)
+        THRESHOLD_MAX = np.array([255, 255, 255],np.uint8)
 
         frame_threshed = cv2.inRange(hsv_img, THRESHOLD_MIN, THRESHOLD_MAX)
 
